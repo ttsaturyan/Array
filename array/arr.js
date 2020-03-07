@@ -95,10 +95,10 @@ function gtnel(zangvac) {
       arr2[k] = [];
     }
 
-    if (ak === String(zangvac[index])&& ak>10) {
+    if (ak === String(zangvac[index]) && ak > 10) {
       console.log("simetrik e " + ak);
     }
-    ak=""
+    ak = "";
   }
 
   return {
@@ -112,3 +112,4 @@ function gtnel(zangvac) {
 }
 
 gtnel(arr);
+
