@@ -8,9 +8,7 @@ function gtnel(zangvac) {
   let min = Infinity;
   let max = -Infinity;
   let artadryal = 1;
-  let bajanvuma2gumar = 0;
-  let simetrikTver;
-
+  let akm=0
   // tver@  andam  andam
 
   let g = 0;
@@ -58,7 +56,6 @@ function gtnel(zangvac) {
   //  bolor  tveri  bazmapatik@
 
   for (let a = 0; a < zangvac.length; a++) {
-    artadryal = zangvac[a];
     artadryal *= zangvac[a];
   }
   console.log(artadryal);
@@ -72,44 +69,38 @@ function gtnel(zangvac) {
       gumar2 += element;
     }
   }
-  console.log(gumar2 + "  gumar2");
+  console.log(gumar2);
 
   // simetrik tver
 
   const arr2 = [];
+  let l=[]
   let ak = "";
-  let b;
   for (let index = 0; index < zangvac.length; index++) {
     let i = zangvac[index];
     if (i !== 0) {
       while (i > 0.9 || i < -0.9) {
         mnacord = i % 10;
         arr2.push(mnacord);
+        l.push(mnacord);
         i -= mnacord;
         i /= 10;
       }
-    }
+      for (let k = 0; k < arr2.length; k++) {
+        ak += String(arr2[k]);
+        arr2[k]=""
+      }
+  
+      if (ak === String(zangvac[index]) && ak > 10) {
+        console.log("simetrik e " + ak);
+      }
+      ak=""
 
-    for (let k = 0; k < arr2.length; k++) {
-      ak += String(arr2[k]);
-      arr2[k] = [];
+      for (let k = 0; k < l.length; k++) {
+        akm +=l[k]
+      }
     }
-
-    if (ak === String(zangvac[index]) && ak > 10) {
-      console.log("simetrik e " + ak);
-    }
-    ak = "";
   }
-
-  return {
-    gumar,
-    max,
-    min,
-    artadryal,
-    bajanvuma2gumar,
-    simetrikTver // 111 1221 123321
-  };
+  console.log(akm)
 }
-
 gtnel(arr);
-
